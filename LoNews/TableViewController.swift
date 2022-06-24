@@ -10,23 +10,23 @@ import UIKit
 class TableViewController: UITableViewController{
 
 
+    var articlesCore = takeNews(at: articles)
     
     @IBAction func refreashControllAction(_ sender: Any) {
         loadNews {
             DispatchQueue.main.async {
                 self.refreshControl?.endRefreshing()
+                self.articlesCore = takeNews(at: articles)
                 self.tableView.reloadData()
             }
+        }
+        for item in articlesCore{
+            print(item.favorite)
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadNews {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
     }
     
 
@@ -39,7 +39,7 @@ class TableViewController: UITableViewController{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return articles.count
+        return articlesCore.count
     }
     
 
@@ -47,12 +47,12 @@ class TableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        let article = articles[indexPath.row]
+        let article = articlesCore[indexPath.row]
         
         cell.titleLabel.text = article.title
-        cell.descriptionLabel.text = article.description
+        cell.descriptionLabel.text = article.content
         
-        if let urlImage = URL(string: article.urlToImage) {
+        if let urlImage = URL(string: article.urlImage!) {
             if let data = try? Data(contentsOf: urlImage){
                 cell.iconImageView.image = UIImage(data: data)
             }
@@ -60,8 +60,10 @@ class TableViewController: UITableViewController{
             cell.iconImageView.image = UIImage(named: "no photo")
         }
         
-        if article.favorites {
-            cell.favoritesOutlet.setImage(UIImage(named: "star.fill"), for: .normal)
+        if article.favorite {
+            cell.favoritesOutlet.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }else{
+            cell.favoritesOutlet.setImage(UIImage(systemName: "star"), for: .normal)
         }
         cell.favoritesOutlet.tag = indexPath.row
 
@@ -79,7 +81,7 @@ class TableViewController: UITableViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToOneNews" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                (segue.destination as? OneNewsViewController)?.article = articles[indexPath.row]
+                (segue.destination as? OneNewsViewController)?.article = articlesCore[indexPath.row]
                 tableView.deselectRow(at: indexPath , animated: true)
             }
         }

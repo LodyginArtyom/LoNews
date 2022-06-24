@@ -3,11 +3,12 @@
     <entity name="ArticlesCore" representedClassName="ArticlesCore" syncable="YES" codeGenerationType="class">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
         <attribute name="urlImage" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="ArticlesCore" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="ArticlesCore" positionX="-63" positionY="-18" width="128" height="119"/>
     </elements>
 </model>

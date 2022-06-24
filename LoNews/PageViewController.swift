@@ -8,9 +8,12 @@
 import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
-
+    
+    var articlesCore = takeNews(at: articles)
+    
     @IBAction func refreashControllAction(_ sender: Any) {
         loadNews {
+            self.articlesCore = takeNews(at: articles)
             self.showViewControllers()
         }
     }
@@ -22,6 +25,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         self.showViewControllers()
         
         loadNews {
+            self.articlesCore = takeNews(at: articles)
             self.showViewControllers()
         }
     }
@@ -59,8 +63,8 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource {
         }
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "OneNewsSID") as! OneNewsViewController
-        
-        vc.article = articles[index]
+
+        vc.article = articlesCore[index]
         
         vc.index = index
         

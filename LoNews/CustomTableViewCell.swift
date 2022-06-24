@@ -6,12 +6,37 @@
 //
 
 import UIKit
+import CoreData
 
 class CustomTableViewCell: UITableViewCell {
     
     @IBAction func makeFavorites(_ sender: Any) {
-        let likePost = articles[favoritesOutlet.tag]
-        favoritesOutlet.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest : NSFetchRequest<ArticlesCore> = ArticlesCore.fetchRequest()
+        
+        do {
+             newsInCoreData = try! context.fetch(fetchRequest)
+        }catch let error as NSError{
+            print(error.localizedDescription)
+        }
+        
+        if newsInCoreData[favoritesOutlet.tag].favorite == false{
+            newsInCoreData[favoritesOutlet.tag].favorite = true
+            favoritesOutlet.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        }else{
+            newsInCoreData[favoritesOutlet.tag].favorite = false
+            favoritesOutlet.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+        
+        do {
+              try context.save()
+        }catch let error as NSError{
+            print(error.localizedDescription)
+        }
+        
         
     }
     @IBOutlet weak var favoritesOutlet: UIButton!
