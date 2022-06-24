@@ -6,8 +6,14 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
-var articles: [Article] {
+var articlesCore: [ArticlesCore] = []
+
+ var articles: [Article] {
+    
+    
     
     let data = try? Data(contentsOf: urlToData)
     if data == nil {
@@ -27,7 +33,7 @@ var articles: [Article] {
         var returnArray : [Article] = []
         
         for dict in array{
-             let newArticles = Article(dictionary: dict)
+            let newArticles = Article(dictionary: dict)
             returnArray.append(newArticles)
         }
         
@@ -57,6 +63,11 @@ func loadNews(complitionHandler: (()->Void)?) {
         
     }
     downloadTask.resume()
+
+    
 }
+
+    
+
 
 

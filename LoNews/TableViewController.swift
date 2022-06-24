@@ -8,9 +8,8 @@
 import UIKit
 
 class TableViewController: UITableViewController{
-    
 
-    
+
     
     @IBAction func refreashControllAction(_ sender: Any) {
         loadNews {
@@ -42,6 +41,7 @@ class TableViewController: UITableViewController{
         // #warning Incomplete implementation, return the number of rows
         return articles.count
     }
+    
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,7 +52,6 @@ class TableViewController: UITableViewController{
         cell.titleLabel.text = article.title
         cell.descriptionLabel.text = article.description
         
-        
         if let urlImage = URL(string: article.urlToImage) {
             if let data = try? Data(contentsOf: urlImage){
                 cell.iconImageView.image = UIImage(data: data)
@@ -61,8 +60,10 @@ class TableViewController: UITableViewController{
             cell.iconImageView.image = UIImage(named: "no photo")
         }
         
-        
-        
+        if article.favorites {
+            cell.favoritesOutlet.setImage(UIImage(named: "star.fill"), for: .normal)
+        }
+        cell.favoritesOutlet.tag = indexPath.row
 
         return cell
     }
@@ -130,5 +131,4 @@ class TableViewController: UITableViewController{
         // Pass the selected object to the new view controller.
     }
     */
-
 }

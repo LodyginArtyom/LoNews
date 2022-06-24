@@ -9,6 +9,12 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
     
+    @IBAction func makeFavorites(_ sender: Any) {
+        let likePost = articles[favoritesOutlet.tag]
+        favoritesOutlet.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        
+    }
+    @IBOutlet weak var favoritesOutlet: UIButton!
     @IBOutlet weak var iconImageView: UIImageView!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -25,5 +31,6 @@ class CustomTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
 
 }

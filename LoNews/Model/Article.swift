@@ -24,6 +24,7 @@ struct Article{
     var urlToImage: String
     var publishedAt: String
     var sourceName: String
+    var favorites: Bool = false
     
     init(dictionary: Dictionary<String, Any>){
         author = dictionary["author"] as? String ?? ""
