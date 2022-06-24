@@ -7,8 +7,20 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController{
+    
 
+    
+    
+    @IBAction func refreashControllAction(_ sender: Any) {
+        loadNews {
+            DispatchQueue.main.async {
+                self.refreshControl?.endRefreshing()
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNews {
@@ -17,6 +29,7 @@ class TableViewController: UITableViewController {
             }
         }
     }
+    
 
     // MARK: - Table view data source
 
@@ -32,14 +45,30 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
         let article = articles[indexPath.row]
         
-        cell.textLabel?.text = article.title
-        cell.detailTextLabel?.text = article.publishedAt
+        cell.titleLabel.text = article.title
+        cell.descriptionLabel.text = article.description
+        
+        
+        if let urlImage = URL(string: article.urlToImage) {
+            if let data = try? Data(contentsOf: urlImage){
+                cell.iconImageView.image = UIImage(data: data)
+            }
+        }else{
+            cell.iconImageView.image = UIImage(named: "no photo")
+        }
+        
+        
+        
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
