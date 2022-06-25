@@ -14,11 +14,11 @@ class TableViewController: UITableViewController{
     
     @IBAction func refreashControllAction(_ sender: Any) {
         loadNews {
-            DispatchQueue.main.async {
+//            DispatchQueue.main.async {
                 self.refreshControl?.endRefreshing()
                 self.articlesCore = takeNews(at: articles)
                 self.tableView.reloadData()
-            }
+//            }
         }
     }
 

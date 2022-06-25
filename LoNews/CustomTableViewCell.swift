@@ -19,8 +19,6 @@ class CustomTableViewCell: UITableViewCell {
         
         do {
              newsInCoreData = try! context.fetch(fetchRequest)
-        }catch let error as NSError{
-            print(error.localizedDescription)
         }
         
         if newsInCoreData[favoritesOutlet.tag].favorite == false{

@@ -29,7 +29,7 @@ class OneNewsViewController: UIViewController {
             openUrl.isEnabled = false
         }
         
-        DispatchQueue.main.async {
+//        DispatchQueue.main.async {
             if let urlImage = URL(string: self.article.urlImage!) {
                 if let data = try? Data(contentsOf: urlImage){
                     self.imageView.image = UIImage(data: data)
@@ -37,7 +37,7 @@ class OneNewsViewController: UIViewController {
             }else{
                 self.imageView.image = UIImage(named: "no photo")
             }
-        }
+//        }
         
         
 

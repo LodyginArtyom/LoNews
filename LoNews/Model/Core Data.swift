@@ -24,9 +24,8 @@ func takeNews(at articles: [Article])->[ArticlesCore]{
     
     do {
          newsInCoreData = try! context.fetch(fetchRequest)
-    }catch let error as NSError{
-        print(error.localizedDescription)
     }
+    
     for news in articles {
         let context = appDelegate.persistentContainer.viewContext
         let newsObjects = ArticlesCore(entity: enity, insertInto: context)
@@ -60,8 +59,6 @@ func takeFavoriteNews()-> [ArticlesCore]{
     
     do {
          newsInCoreDataFavorite = try! context.fetch(fetchRequest)
-    }catch let error as NSError{
-        print(error.localizedDescription)
     }
 
     newsInCoreDataFavorite.removeAll(where: {$0.favorite == false})

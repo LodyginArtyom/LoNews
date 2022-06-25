@@ -68,11 +68,11 @@ class FavoriteTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToOneNews", sender: self)
+        performSegue(withIdentifier: "goToFavoriteNews", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToOneNews" {
+        if segue.identifier == "goToFavoriteNews" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 (segue.destination as? OneNewsViewController)?.article = articlesCoreFavorite[indexPath.row]
                 tableView.deselectRow(at: indexPath , animated: true)
