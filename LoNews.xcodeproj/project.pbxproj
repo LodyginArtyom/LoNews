@@ -18,6 +18,7 @@
 		5F9A7CA92865C1A900928958 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A7CA82865C1A900928958 /* CustomTableViewCell.swift */; };
 		5F9A7CCF2865F43900928958 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A7CCD2865F43900928958 /* CoreData.xcdatamodeld */; };
 		5F9A7CD1286662C100928958 /* Core Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A7CD0286662C100928958 /* Core Data.swift */; };
+		5F9A7CD3286689B000928958 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A7CD2286689B000928958 /* FavoriteTableViewController.swift */; };
 		5FE45AA62860ECB900FED8FF /* OneNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE45AA52860ECB900FED8FF /* OneNewsViewController.swift */; };
 		5FE45AA928634FFE00FED8FF /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE45AA828634FFE00FED8FF /* PageViewController.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		5F9A7CA82865C1A900928958 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		5F9A7CCE2865F43900928958 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		5F9A7CD0286662C100928958 /* Core Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core Data.swift"; sourceTree = "<group>"; };
+		5F9A7CD2286689B000928958 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		5FE45AA52860ECB900FED8FF /* OneNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneNewsViewController.swift; sourceTree = "<group>"; };
 		5FE45AA828634FFE00FED8FF /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 				5FE45AA828634FFE00FED8FF /* PageViewController.swift */,
 				5F9A7CA82865C1A900928958 /* CustomTableViewCell.swift */,
 				5F9A7CCD2865F43900928958 /* CoreData.xcdatamodeld */,
+				5F9A7CD2286689B000928958 /* FavoriteTableViewController.swift */,
 			);
 			path = LoNews;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				5F9A7CCF2865F43900928958 /* CoreData.xcdatamodeld in Sources */,
 				5F9A7CA92865C1A900928958 /* CustomTableViewCell.swift in Sources */,
 				5F7903842860CEFB0007F0D7 /* TableViewController.swift in Sources */,
+				5F9A7CD3286689B000928958 /* FavoriteTableViewController.swift in Sources */,
 				5F9A7CD1286662C100928958 /* Core Data.swift in Sources */,
 				5F7903802860B0180007F0D7 /* Article.swift in Sources */,
 				5F79036B2860AC5F0007F0D7 /* AppDelegate.swift in Sources */,

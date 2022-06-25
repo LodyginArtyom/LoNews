@@ -50,3 +50,20 @@ func takeNews(at articles: [Article])->[ArticlesCore]{
     }
     return newsInCoreData
 }
+
+func takeFavoriteNews()-> [ArticlesCore]{
+    var newsInCoreDataFavorite : [ArticlesCore] = []
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let context = appDelegate.persistentContainer.viewContext
+  
+    let fetchRequest : NSFetchRequest<ArticlesCore> = ArticlesCore.fetchRequest()
+    
+    do {
+         newsInCoreDataFavorite = try! context.fetch(fetchRequest)
+    }catch let error as NSError{
+        print(error.localizedDescription)
+    }
+
+    newsInCoreDataFavorite.removeAll(where: {$0.favorite == false})
+    return newsInCoreDataFavorite
+}

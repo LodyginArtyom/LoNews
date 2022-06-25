@@ -20,9 +20,6 @@ class TableViewController: UITableViewController{
                 self.tableView.reloadData()
             }
         }
-        for item in articlesCore{
-            print(item.favorite)
-        }
     }
 
     override func viewDidLoad() {
