@@ -14,12 +14,10 @@ class TableViewController: UITableViewController{
     
     @IBAction func refreashControllAction(_ sender: Any) {
         loadNews {
-//            DispatchQueue.main.async {
-                self.refreshControl?.endRefreshing()
-                self.articlesCore = takeNews(at: articles)
-                self.tableView.reloadData()
-//            }
         }
+        self.refreshControl?.endRefreshing()
+        self.articlesCore = takeNews(at: articles)
+        self.tableView.reloadData()
     }
 
     override func viewDidLoad() {
@@ -68,7 +66,7 @@ class TableViewController: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 350
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

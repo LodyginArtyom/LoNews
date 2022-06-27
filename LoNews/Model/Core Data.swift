@@ -46,6 +46,18 @@ func takeNews(at articles: [Article])->[ArticlesCore]{
                 print(error.localizedDescription)
             }
         }
+        
+        for (index, news) in newsInCoreData.enumerated() {
+            var chekUp = 0
+            for chekNews in newsInCoreData{
+                if news.title == chekNews.title{
+                    chekUp += 1
+                }
+            }
+            if chekUp > 1{
+                newsInCoreData.remove(at: index)
+            }
+        }
     }
     return newsInCoreData
 }

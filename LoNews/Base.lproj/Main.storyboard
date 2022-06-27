@@ -8,11 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TableView-->
+        <!--Новости-->
         <scene sceneID="g1G-Ev-qzY">
             <objects>
                 <navigationController id="m4e-4Z-4dr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TableView" id="xjo-xy-xV6"/>
+                    <tabBarItem key="tabBarItem" title="Новости" image="chart.bar.doc.horizontal" catalog="system" id="xjo-xy-xV6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tHs-pn-iLL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="257.97101449275362" y="77.678571428571431"/>
         </scene>
-        <!--News-->
+        <!--Новости-->
         <scene sceneID="mcV-wv-hZy">
             <objects>
                 <tableViewController id="U7J-bT-nyM" customClass="TableViewController" customModule="LoNews" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,15 +42,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="buX-Or-bRj">
-                                            <rect key="frame" x="30" y="252" width="354" height="21"/>
+                                            <rect key="frame" x="30" y="251.5" width="354" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f84-t7-ro3">
-                                            <rect key="frame" x="30" y="226" width="354" height="21"/>
-                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f84-t7-ro3">
+                                            <rect key="frame" x="30" y="226" width="354" height="20.5"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Title">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="17"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R3E-4L-Dev">
@@ -98,7 +104,7 @@
                             <outlet property="delegate" destination="U7J-bT-nyM" id="bH3-c1-ve1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="News" id="4uf-qx-Pah"/>
+                    <navigationItem key="navigationItem" title="Новости" id="4uf-qx-Pah"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="wcK-Du-5MG">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -114,11 +120,11 @@
             </objects>
             <point key="canvasLocation" x="1069.5652173913045" y="78.348214285714278"/>
         </scene>
-        <!--favorite-->
+        <!--избранное-->
         <scene sceneID="jF9-Gf-AVu">
             <objects>
                 <navigationController id="5Wj-VE-2YO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="favorite" id="VfM-8o-iZd"/>
+                    <tabBarItem key="tabBarItem" title="избранное" image="star.fill" catalog="system" id="VfM-8o-iZd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zxw-Ce-lAg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -219,11 +225,11 @@
             </objects>
             <point key="canvasLocation" x="-652.17391304347836" y="862.5"/>
         </scene>
-        <!--PageView-->
+        <!--Листать-->
         <scene sceneID="Ha3-uf-fN5">
             <objects>
                 <navigationController id="AWT-5k-QO0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="PageView" id="ncn-U6-W24"/>
+                    <tabBarItem key="tabBarItem" title="Листать" image="book" catalog="system" id="ncn-U6-W24"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HkK-Gr-f65">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -264,53 +270,65 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="opU-L1-tt1">
                                 <rect key="frame" x="197" y="227" width="20" height="20"/>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Psk-zQ-EAf">
-                                <rect key="frame" x="87" y="173" width="240" height="128"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2n-dh-anU">
-                                <rect key="frame" x="87" y="335" width="240" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2n-dh-anU">
+                                <rect key="frame" x="10" y="335" width="394" height="27"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="title">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="24" name=".SFNS-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffg-hZ-xVg">
-                                <rect key="frame" x="87" y="377" width="85.5" height="119"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffg-hZ-xVg">
+                                <rect key="frame" x="10" y="383" width="394" height="20.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="description">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtP-Ks-Cet">
-                                <rect key="frame" x="87" y="544" width="115" height="31"/>
+                                <rect key="frame" x="10" y="787" width="394" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="Tov-Ep-AAe"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Open in Safari"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Открыть источник"/>
                                 <connections>
                                     <action selector="pushOpenAction:" destination="gds-lc-UE7" eventType="touchUpInside" id="gnB-jL-4JY"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Psk-zQ-EAf">
+                                <rect key="frame" x="38" y="95" width="339" height="180"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GbW-6A-0rT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="b2n-dh-anU" firstAttribute="top" secondItem="14v-wK-iqN" secondAttribute="top" constant="335" id="0kA-sM-AIu"/>
-                            <constraint firstItem="GbW-6A-0rT" firstAttribute="bottom" secondItem="KtP-Ks-Cet" secondAttribute="bottom" constant="238" id="25u-cw-0Xo"/>
                             <constraint firstItem="b2n-dh-anU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KtP-Ks-Cet" secondAttribute="trailing" id="3jH-PD-HUc"/>
-                            <constraint firstItem="b2n-dh-anU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Psk-zQ-EAf" secondAttribute="trailing" id="3oi-Jh-c8R"/>
                             <constraint firstItem="b2n-dh-anU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ffg-hZ-xVg" secondAttribute="trailing" id="42q-Qw-C4y"/>
-                            <constraint firstItem="Psk-zQ-EAf" firstAttribute="centerY" secondItem="opU-L1-tt1" secondAttribute="centerY" id="8kv-tH-OlH"/>
-                            <constraint firstItem="Psk-zQ-EAf" firstAttribute="trailing" secondItem="b2n-dh-anU" secondAttribute="trailing" id="Aso-Xw-fuk"/>
+                            <constraint firstItem="opU-L1-tt1" firstAttribute="top" secondItem="GbW-6A-0rT" secondAttribute="top" constant="139" id="5tx-ui-U6S"/>
+                            <constraint firstItem="b2n-dh-anU" firstAttribute="top" secondItem="Psk-zQ-EAf" secondAttribute="bottom" constant="60" id="D5u-vr-sYu"/>
                             <constraint firstItem="b2n-dh-anU" firstAttribute="centerX" secondItem="opU-L1-tt1" secondAttribute="centerX" id="NDz-KN-3QC"/>
-                            <constraint firstItem="b2n-dh-anU" firstAttribute="top" secondItem="Psk-zQ-EAf" secondAttribute="bottom" constant="34" id="OkU-W7-KNn"/>
-                            <constraint firstItem="b2n-dh-anU" firstAttribute="leading" secondItem="GbW-6A-0rT" secondAttribute="leading" constant="87" id="YHz-Y3-pTs"/>
-                            <constraint firstItem="b2n-dh-anU" firstAttribute="leading" secondItem="KtP-Ks-Cet" secondAttribute="leading" id="ZfH-ro-Gly"/>
-                            <constraint firstItem="Psk-zQ-EAf" firstAttribute="leading" secondItem="b2n-dh-anU" secondAttribute="leading" id="gWf-sy-uzK"/>
-                            <constraint firstItem="Psk-zQ-EAf" firstAttribute="top" secondItem="GbW-6A-0rT" secondAttribute="top" constant="85" id="kvV-Zh-I7m"/>
-                            <constraint firstItem="KtP-Ks-Cet" firstAttribute="top" secondItem="Ffg-hZ-xVg" secondAttribute="bottom" constant="48" id="mpw-p5-pNt"/>
+                            <constraint firstItem="KtP-Ks-Cet" firstAttribute="bottom" secondItem="GbW-6A-0rT" secondAttribute="bottom" constant="5" id="VYa-wR-9ZV"/>
+                            <constraint firstItem="Ffg-hZ-xVg" firstAttribute="leading" secondItem="GbW-6A-0rT" secondAttribute="leading" constant="10" id="brd-fc-ynr"/>
+                            <constraint firstItem="b2n-dh-anU" firstAttribute="leading" secondItem="GbW-6A-0rT" secondAttribute="leading" constant="10" id="czy-K6-TPw"/>
+                            <constraint firstItem="Psk-zQ-EAf" firstAttribute="leading" secondItem="GbW-6A-0rT" secondAttribute="leading" constant="38" id="fsY-6A-gOc"/>
+                            <constraint firstItem="GbW-6A-0rT" firstAttribute="trailing" secondItem="Ffg-hZ-xVg" secondAttribute="trailing" constant="10" id="jHk-gT-KoV"/>
+                            <constraint firstItem="KtP-Ks-Cet" firstAttribute="leading" secondItem="GbW-6A-0rT" secondAttribute="leading" constant="10" id="jfk-ph-PVU"/>
                             <constraint firstItem="b2n-dh-anU" firstAttribute="centerX" secondItem="14v-wK-iqN" secondAttribute="centerX" id="nGI-dE-ugu"/>
+                            <constraint firstItem="GbW-6A-0rT" firstAttribute="trailing" secondItem="KtP-Ks-Cet" secondAttribute="trailing" constant="10" id="nSm-oM-bBH"/>
+                            <constraint firstItem="Psk-zQ-EAf" firstAttribute="top" secondItem="GbW-6A-0rT" secondAttribute="top" constant="7" id="niE-7c-DkL"/>
+                            <constraint firstItem="GbW-6A-0rT" firstAttribute="trailing" secondItem="Psk-zQ-EAf" secondAttribute="trailing" constant="37" id="npx-r7-3Ei"/>
+                            <constraint firstItem="GbW-6A-0rT" firstAttribute="trailing" secondItem="b2n-dh-anU" secondAttribute="trailing" constant="10" id="sK5-2b-Wgs"/>
                             <constraint firstItem="Ffg-hZ-xVg" firstAttribute="top" secondItem="b2n-dh-anU" secondAttribute="bottom" constant="21" id="sPC-Gf-TBc"/>
-                            <constraint firstItem="b2n-dh-anU" firstAttribute="leading" secondItem="Ffg-hZ-xVg" secondAttribute="leading" id="tUb-2H-2F5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q1W-pX-YXU"/>
@@ -350,7 +368,10 @@
         <segue reference="nZS-eq-qRJ"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

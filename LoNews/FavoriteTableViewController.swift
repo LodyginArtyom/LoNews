@@ -14,7 +14,6 @@ class FavoriteTableViewController: UITableViewController {
         articlesCoreFavorite = takeFavoriteNews()
         refreshControl?.endRefreshing()
         tableView.reloadData()
-
     }
 
     override func viewDidLoad() {
